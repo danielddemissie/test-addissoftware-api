@@ -3,19 +3,20 @@ const cors = require("cors");
 require("dotenv").config();
 const conn = require("./db.config");
 const userRoute = require("./route");
-const path = require("path");
-
+const route = express.Router();
 const app = express();
-const router = express.Router();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/user", userRoute);
-app.use("/", router);
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/index.html"));
+route.get("/", (req, res) => {
+  res.send({
+    message: "it works",
+  });
 });
+app.use("/", route);
 
 const PORT = process.env.PORT || 4200;
 app.listen(PORT, () => {
