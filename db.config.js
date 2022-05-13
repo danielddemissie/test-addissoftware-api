@@ -5,7 +5,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 
 module.exports = () => {
   connect(
-    MONGODB_URL,
+    `${MONGODB_URL}`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
