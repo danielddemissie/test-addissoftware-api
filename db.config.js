@@ -12,7 +12,7 @@ module.exports = () => {
     },
     (err) => {
       if (err) {
-        console.log("error connecting to db");
+        console.log("error connecting to db" + err);
       } else {
         console.log("connect to db");
       }
