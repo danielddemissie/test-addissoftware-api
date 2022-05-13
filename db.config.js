@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-
-const MONGODB_URL = process.env.MONGODB_URL;
-
 module.exports = () => {
   mongoose.connect(
-    `${MONGODB_URL}`,
+    "mongodb+srv://daniel:hidaniel@cluster0.giaa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
