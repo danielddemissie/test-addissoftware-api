@@ -3,7 +3,7 @@ require("dotenv").config();
 
 module.exports = () => {
   mongoose.connect(
-    "mongodb+srv://daniel:hidaniel@cluster0.giaa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    `${MONGODB_URL}`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
