@@ -37,19 +37,19 @@ Start the server
 
 #### Get all users
 
-```http
+```bash
   GET /api/user/all
 ```
 
 #### Edit user
 
-```http
+```bash
   PUT /api/user/edit/${_id}
 ```
 
 #### Delete user
 
-```http
+```bash
   DELETE /api/user/delete/${_id}
 ```
 
@@ -59,6 +59,6 @@ Start the server
 
 #### Add user
 
-```http
+```bash
   POST /api/user/add/
 ```
