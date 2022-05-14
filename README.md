@@ -62,3 +62,9 @@ Start the server
 ```bash
   POST /api/user/add/
 ```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`MONGODB_URL="mongodb+srv://daniel:hidaniel@cluster0.giaa7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"`
