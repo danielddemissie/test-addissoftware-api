@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const { addUser, getAllusers, editUser, deleteUser } = require("./controller");
 const route = Router();
+const path = require("path");
+
 const defaultRoute = route.get("/", (req, res) => {
-  res.send({
-    message: "test addissoftware api",
-  });
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 const userRoute = route
   .post("/add", addUser)
