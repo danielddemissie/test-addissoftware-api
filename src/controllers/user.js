@@ -1,5 +1,5 @@
-const User = require("./User");
-const { sendData } = require("./utils");
+const User = require('../models/User');
+const { sendData } = require('../../utils');
 
 module.exports = {
   addUser: async (req, res) => {
@@ -8,17 +8,17 @@ module.exports = {
         ...req.body,
       });
       await user.save();
-      sendData(res, user, "user created");
+      sendData(res, user, 'user created');
     } catch (error) {
-      sendData(res, null, "error:" + error.message);
+      sendData(res, null, 'error:' + error.message);
     }
   },
   getAllusers: async (req, res) => {
     try {
       const users = await User.find();
-      sendData(res, users, "all users");
+      sendData(res, users, 'all users');
     } catch (error) {
-      sendData(res, null, "error" + error.message);
+      sendData(res, null, 'error' + error.message);
     }
   },
   editUser: async (req, res) => {
@@ -46,9 +46,9 @@ module.exports = {
         }
       }
       await oldUser.save();
-      sendData(res, oldUser, "user updated");
+      sendData(res, oldUser, 'user updated');
     } catch (error) {
-      sendData(res, null, "error: " + error.message);
+      sendData(res, null, 'error: ' + error.message);
     }
   },
 
@@ -63,10 +63,10 @@ module.exports = {
         await User.deleteOne({
           _id,
         });
-        return sendData(res, null, "user deleted");
+        return sendData(res, null, 'user deleted');
       }
     } catch (error) {
-      sendData(res, null, "error:" + error.message);
+      sendData(res, null, 'error:' + error.message);
     }
   },
 };
